@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARMArchiveApp", "ARMArchiveApp\ARMArchiveApp.csproj", "{4D246329-F7E8-4306-983D-084113EE3CB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARMArchiveApp.Models", "ARMArchiveApp.Models\ARMArchiveApp.Models.csproj", "{129D8CE9-BF20-4BE1-BDC7-F4F55618F3D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D246329-F7E8-4306-983D-084113EE3CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D246329-F7E8-4306-983D-084113EE3CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D246329-F7E8-4306-983D-084113EE3CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D246329-F7E8-4306-983D-084113EE3CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129D8CE9-BF20-4BE1-BDC7-F4F55618F3D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129D8CE9-BF20-4BE1-BDC7-F4F55618F3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129D8CE9-BF20-4BE1-BDC7-F4F55618F3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129D8CE9-BF20-4BE1-BDC7-F4F55618F3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92C4D775-BA9B-4A9C-AA5B-7797915001C1}
+	EndGlobalSection
+EndGlobal
