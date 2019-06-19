@@ -3,3 +3,9 @@ C:\Users\Vlad\source\repos\ARMArchiveApp\ARMArchiveApp.Models\bin\Debug\ARMArchi
 C:\Users\Vlad\source\repos\ARMArchiveApp\ARMArchiveApp.Models\bin\Debug\ARMArchiveApp.Models.pdb
 C:\Users\Vlad\source\repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.dll
 C:\Users\Vlad\source\repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.pdb
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\bin\Debug\ARMArchiveApp.Models.dll
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\bin\Debug\ARMArchiveApp.Models.pdb
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.csprojAssemblyReference.cache
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.csproj.CoreCompileInputs.cache
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.dll
+C:\Users\гороховв.CORP\Source\Repos\ARMArchiveApp\ARMArchiveApp.Models\obj\Debug\ARMArchiveApp.Models.pdb

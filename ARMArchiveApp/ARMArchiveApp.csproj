@@ -61,12 +61,24 @@
     <Compile Include="AddArchiveForm.Designer.cs">
       <DependentUpon>AddArchiveForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDocumentForm.Designer.cs">
+      <DependentUpon>AddDocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArchiveContext.cs" />
     <Compile Include="InfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InfoForm.Designer.cs">
       <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201906180358534_Initial.cs" />
     <Compile Include="Migrations\201906180358534_Initial.Designer.cs">
@@ -78,8 +90,14 @@
     <EmbeddedResource Include="AddArchiveForm.resx">
       <DependentUpon>AddArchiveForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddDocumentForm.resx">
+      <DependentUpon>AddDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906180358534_Initial.resx">
       <DependentUpon>201906180358534_Initial.cs</DependentUpon>

@@ -13,9 +13,12 @@ namespace ARMArchiveApp
 {
     public partial class InfoForm : Form
     {
+        private MenuItems menuItem;
+
         public InfoForm()
         {
             InitializeComponent();
+            menuItem = MenuItems.Archive;
         }
 
         private void InfoFormLoad(object sender, EventArgs e)
@@ -25,7 +28,22 @@ namespace ARMArchiveApp
 
         private void AddButtonClick(object sender, EventArgs e)
         {
-            new AddArchiveForm().Show();
+          
+            switch (menuItem)
+            {
+                case MenuItems.Archive:
+                    new AddArchiveForm().Show();
+                    break;
+                case MenuItems.Delivery:
+                //    new AddDeliveryForm().Show();
+                    break;
+                case MenuItems.Document:
+                  //  new AddDocumentForm().Show();
+                    break;
+                case MenuItems.Subscriber:
+                  //  new AddSubscriberForm().Show();
+                    break;
+            }
         }
 
         private void UpdateButtonClick(object sender, EventArgs e)
@@ -34,9 +52,28 @@ namespace ARMArchiveApp
             {
                 using (var context = new ArchiveContext())
                 {
-                    var archives = context.Archives.ToList();
+                    dynamic data;
+                    switch (menuItem)
+                    {
+                        case MenuItems.Archive:
+                            data = context.Archives.ToList();
+                            dataGridView.DataSource = data as List<Archive>;
+                            break;
+                        case MenuItems.Delivery:
+                            data = context.Deliveries.ToList();
+                            dataGridView.DataSource = data as List<Delivery>;
+                            break;
+                        case MenuItems.Document:
+                            data = context.Documents.ToList();
+                            dataGridView.DataSource = data as List<Document>;
+                            break;
+                        case MenuItems.Subscriber:
+                            data = context.Subscribers.ToList();
+                            dataGridView.DataSource = data as List<Subscriber>;
+                            break;
+                    }
+                    
 
-                    dataGridView.DataSource = archives;
                 }
             }
             catch (Exception exception)
@@ -48,7 +85,7 @@ namespace ARMArchiveApp
         private void DataGridViewCellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             // MessageBox.Show(dataGridView.CurrentCell.ColumnIndex + " " + dataGridView.CurrentCell.RowIndex + " " + dataGridView.CurrentCell.Value.ToString());
-            
+
             switch (dataGridView.CurrentCell.ColumnIndex)
             {
                 case 0:
@@ -111,9 +148,43 @@ namespace ARMArchiveApp
         {
             using (var context = new ArchiveContext())
             {
-                context.Archives.Remove(context.Archives.ToList()[dataGridView.CurrentCell.RowIndex]);
+                switch (menuItem)
+                {
+                    case MenuItems.Archive:
+                        context.Archives.Remove(context.Archives.ToList()[dataGridView.CurrentCell.RowIndex]);
+                        break;
+                    case MenuItems.Delivery:
+                        context.Deliveries.Remove(context.Deliveries.ToList()[dataGridView.CurrentCell.RowIndex]);
+                        break;
+                    case MenuItems.Document:
+                        context.Documents.Remove(context.Documents.ToList()[dataGridView.CurrentCell.RowIndex]);
+                        break;
+                    case MenuItems.Subscriber:
+                        context.Subscribers.Remove(context.Subscribers.ToList()[dataGridView.CurrentCell.RowIndex]);
+                        break;
+                }
                 context.SaveChanges();
             }
+        }
+
+        private void DocumentsToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            menuItem = MenuItems.Document;
+        }
+
+        private void ArchiveToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            menuItem = MenuItems.Archive;
+        }
+
+        private void DeliveryToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            menuItem = MenuItems.Delivery;
+        }
+
+        private void SubscriberToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            menuItem = MenuItems.Subscriber;
         }
     }
 }

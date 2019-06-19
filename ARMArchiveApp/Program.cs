@@ -16,7 +16,7 @@ namespace ARMArchiveApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InfoForm());
+            Application.Run(new LoginForm());
         }
     }
 }
