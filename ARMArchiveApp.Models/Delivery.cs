@@ -8,7 +8,10 @@ namespace ARMArchiveApp.Models
 {
     public class Delivery
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        // Документ
+        public Document Document { get; set; }
 
         // Дата выдачи
         public DateTime GettingDate { get; set; }

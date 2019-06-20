@@ -112,3 +112,5 @@ C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.
 C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.csproj.CopyComplete
 C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.exe
 C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.pdb
+C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixProperties.resources
+C:\Users\Vlad\Source\Repos\ARMArchiveApp3\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixDelivery.resources

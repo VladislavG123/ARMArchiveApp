@@ -102,6 +102,14 @@
     <Compile Include="Migrations\201906180358534_Initial.Designer.cs">
       <DependentUpon>201906180358534_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201458365_FixProperties.cs" />
+    <Compile Include="Migrations\201906201458365_FixProperties.Designer.cs">
+      <DependentUpon>201906201458365_FixProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201557440_FixDelivery.cs" />
+    <Compile Include="Migrations\201906201557440_FixDelivery.Designer.cs">
+      <DependentUpon>201906201557440_FixDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906180358534_Initial.resx">
       <DependentUpon>201906180358534_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201458365_FixProperties.resx">
+      <DependentUpon>201906201458365_FixProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201557440_FixDelivery.resx">
+      <DependentUpon>201906201557440_FixDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

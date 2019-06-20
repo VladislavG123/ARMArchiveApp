@@ -27,8 +27,7 @@ namespace ARMArchiveApp
                     && nameTextBox.Text.Length > 0
                     && int.TryParse(cellTextBox.Text, out int cell) && cell > 0
                     && int.TryParse(amountTextBox.Text, out int amount) && amount > 0
-                    && DateTime.TryParse(gettingDatePicker.Text, out DateTime gettingDate) && gettingDate >= DateTime.Now
-                    && DateTime.TryParse(receiptDatePicker.Text, out DateTime receiptDate) && receiptDate >= DateTime.Now)
+                    && DateTime.TryParse(receiptDatePicker.Text, out DateTime receiptDate))
                 {
                     using (var context = new ArchiveContext())
                     {
@@ -52,19 +51,18 @@ namespace ARMArchiveApp
                         }
 
 
-                       /* for (int i = 0; i < themesDataGridView.Columns.Count; i++)
+                        for (int i = 0; i < themesDataGridView.Columns.Count; i++)
                         {
                             if (themesDataGridView.Columns[i].HeaderText.Length > 0)
                             {
-                                document.Themes.Add(themesDataGridView.Columns[i].HeaderText);
+                                document.Themes.Add(themesDataGridView.Rows[i].Cells[0].Value as string);
                             }
-                        }*/
+                        }
 
                         document.Number = number;
                         document.Name = nameTextBox.Text;
                         document.Cell = cell;
                         document.Amount = amount;
-                        document.GettingDate = gettingDate;
                         document.ReceiptDate = receiptDate;
 
                         context.Documents.Add(document);

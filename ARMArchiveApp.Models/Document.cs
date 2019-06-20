@@ -18,17 +18,12 @@ namespace ARMArchiveApp.Models
         /// Название документа
         /// </summary>
         public string Name { get; set; }
-        public List<string> Themes { get; set; }
+        public List<string> Themes { get; set; } = new List<string>();
         /// <summary>
         /// Ячейка
         /// </summary>
         public int Cell { get; set; }
         public int Amount { get; set; }
-        // Дата выдачи.
-        /// <summary>
-        /// Дата выдачи
-        /// </summary>
-        public DateTime GettingDate { get; set; }
         // Дата поступления
         /// <summary>
         /// Дата поступления
