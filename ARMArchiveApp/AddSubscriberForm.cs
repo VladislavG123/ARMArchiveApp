@@ -23,13 +23,11 @@ namespace ARMArchiveApp
             try
             {
                 Subscriber subscriber = new Subscriber();
-                if (fullnameTextBox.Text.Length > 0 && departmentTextBox.Text.Length > 0 && phoneTextBox.Text.Length > 0
-                    && DateTime.TryParse(gettingDatePicker.Text, out DateTime gettingDateTime))
+                if (fullnameTextBox.Text.Length > 0 && departmentTextBox.Text.Length > 0 && phoneTextBox.Text.Length > 0)
                 {
                     subscriber.Department = departmentTextBox.Text;
                     subscriber.FullName = fullnameTextBox.Text;
                     subscriber.Phone = phoneTextBox.Text;
-                    subscriber.GettingDate = gettingDateTime;
                     using (var context = new ArchiveContext())
                     {
                         context.Subscribers.Add(subscriber);

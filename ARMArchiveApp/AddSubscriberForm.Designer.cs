@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gettingDatePicker = new System.Windows.Forms.DateTimePicker();
             this.fullnameTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.departmentTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,28 +37,12 @@
             this.button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // gettingDatePicker
-            // 
-            this.gettingDatePicker.Location = new System.Drawing.Point(15, 230);
-            this.gettingDatePicker.Name = "gettingDatePicker";
-            this.gettingDatePicker.Size = new System.Drawing.Size(170, 20);
-            this.gettingDatePicker.TabIndex = 16;
-            // 
             // fullnameTextBox
             // 
             this.fullnameTextBox.Location = new System.Drawing.Point(15, 49);
             this.fullnameTextBox.Name = "fullnameTextBox";
             this.fullnameTextBox.Size = new System.Drawing.Size(127, 20);
             this.fullnameTextBox.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 214);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Введите дату выдачи";
             // 
             // label4
             // 
@@ -105,7 +87,7 @@
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(215, 308);
+            this.button.Location = new System.Drawing.Point(183, 250);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(114, 45);
             this.button.TabIndex = 21;
@@ -117,15 +99,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 365);
+            this.ClientSize = new System.Drawing.Size(309, 307);
             this.Controls.Add(this.button);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.departmentTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gettingDatePicker);
             this.Controls.Add(this.fullnameTextBox);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Name = "AddSubscriberForm";
             this.Text = "AddSubscriberForm";
@@ -135,10 +115,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker gettingDatePicker;
         private System.Windows.Forms.TextBox fullnameTextBox;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox departmentTextBox;
         private System.Windows.Forms.Label label1;

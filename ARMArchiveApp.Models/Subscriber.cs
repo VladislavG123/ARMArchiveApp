@@ -16,8 +16,7 @@ namespace ARMArchiveApp.Models
         public string Department { get; set; }
 
         public string Phone { get; set; }
-
-        public DateTime GettingDate { get; set; }
+        
 
     }
 }

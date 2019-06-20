@@ -262,20 +262,12 @@ namespace ARMArchiveApp
                                 context.SaveChanges();
                             }
                             return;
-                        case 4:
-                            using (var context = new ArchiveContext())
-                            {
-                                MessageBox.Show("Значение даты изменять нельзя!");
-                                UpdateButtonClick(null, null);
-                                return;
-                            }
-
+                      
                     }
                     break;
             }
-
-
-
+            UpdateButtonClick(null, null);
+            
         }
 
         private void DeleteButtonClick(object sender, EventArgs e)
@@ -298,6 +290,7 @@ namespace ARMArchiveApp
                         break;
                 }
                 context.SaveChanges();
+                UpdateButtonClick(null, null);
             }
         }
 

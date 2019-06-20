@@ -56,7 +56,7 @@ namespace ARMArchiveApp
                             delivery.Document = document;
                         }
                     }
-                    delivery.Document = _documents.Where(document => document.Name == documentComboBox.Text).ToList()[0];
+
                     delivery.GettingDate = DateTime.Parse(gettingDateTimePicker.Text);
 
                     using (var context = new ArchiveContext())
