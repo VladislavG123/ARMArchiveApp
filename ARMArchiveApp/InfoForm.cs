@@ -19,6 +19,7 @@ namespace ARMArchiveApp
         {
             InitializeComponent();
             menuItem = MenuItems.Archive;
+            UpdateButtonClick(null, null);
         }
 
         private void InfoFormLoad(object sender, EventArgs e)
@@ -33,15 +34,19 @@ namespace ARMArchiveApp
             {
                 case MenuItems.Archive:
                     new AddArchiveForm().Show();
+                    UpdateButtonClick(null, null);
                     break;
                 case MenuItems.Delivery:
                     new AddDeliveryForm().Show();
+                    UpdateButtonClick(null, null);
                     break;
                 case MenuItems.Document:
                     new AddDocumentForm().Show();
+                    UpdateButtonClick(null, null);
                     break;
                 case MenuItems.Subscriber:
                     new AddSubscriberForm().Show();
+                    UpdateButtonClick(null, null);
                     break;
             }
         }
@@ -86,61 +91,93 @@ namespace ARMArchiveApp
         {
             // MessageBox.Show(dataGridView.CurrentCell.ColumnIndex + " " + dataGridView.CurrentCell.RowIndex + " " + dataGridView.CurrentCell.Value.ToString());
 
-            switch (dataGridView.CurrentCell.ColumnIndex)
+            switch (menuItem)
             {
-                case 0:
-                    MessageBox.Show("Значение ID изменять нельзя!");
-                    UpdateButtonClick(null, null);
-                    return;
-                case 1:
-                    using (var context = new ArchiveContext())
+                case MenuItems.Archive:
+                    switch (dataGridView.CurrentCell.ColumnIndex)
                     {
-                        // Rack
-                        if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int rack)
-                            && rack > 0 && rack != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Rack)
-                        {
-                            context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Rack = rack;
-                            context.SaveChanges();
-                        }
-                        return;
+                        case 0:
+                            MessageBox.Show("Значение ID изменять нельзя!");
+                            UpdateButtonClick(null, null);
+                            return;
+                        case 1:
+                            using (var context = new ArchiveContext())
+                            {
+                                // Rack
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int rack)
+                                    && rack > 0 && rack != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Rack)
+                                {
+                                    context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Rack = rack;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 2:
+                            // Shelf
+                            using (var context = new ArchiveContext())
+                            {
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int shelf)
+                                    && shelf > 0 && shelf != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Shelf)
+                                {
+                                    context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Shelf = shelf;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 3:
+                            //Cell
+                            using (var context = new ArchiveContext())
+                            {
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int cell)
+                                    && cell > 0 && cell != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Cell)
+                                {
+                                    context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Cell = cell;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 4:
+                            //Fullness
+                            using (var context = new ArchiveContext())
+                            {
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int fullness)
+                                    && fullness >= 0 && fullness <= 100 && fullness != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Fullness)
+                                {
+                                    context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Fullness = fullness;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
                     }
-                case 2:
-                    // Shelf
-                    using (var context = new ArchiveContext())
+                    break;
+                case MenuItems.Delivery:
+                    switch (dataGridView.CurrentCell.ColumnIndex)
                     {
-                        if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int shelf)
-                            && shelf > 0 && shelf != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Shelf)
-                        {
-                            context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Shelf = shelf;
-                            context.SaveChanges();
-                        }
-                        return;
+                        case 0:
+                            MessageBox.Show("Значение ID изменять нельзя!");
+                            UpdateButtonClick(null, null);
+                            return;
+                        case 1:
+                            using (var context = new ArchiveContext())
+                            {
+                                MessageBox.Show("Значение даты выдачи изменять нельзя!");
+                                UpdateButtonClick(null, null);
+                                return;
+                            }
+                        case 2:
+                            MessageBox.Show("Значение абонента изменять нельзя!");
+                            UpdateButtonClick(null, null);
+                            return;
                     }
-                case 3:
-                    //Cell
-                    using (var context = new ArchiveContext())
-                    {
-                        if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int cell)
-                            && cell > 0 && cell != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Cell)
-                        {
-                            context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Cell = cell;
-                            context.SaveChanges();
-                        }
-                        return;
-                    }
-                case 4:
-                    //Fullness
-                    using (var context = new ArchiveContext())
-                    {
-                        if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int fullness)
-                            && fullness >= 0 && fullness <= 100 && fullness != (context.Archives.ToList())[dataGridView.CurrentCell.RowIndex].Fullness)
-                        {
-                            context.Archives.ToList()[dataGridView.CurrentCell.RowIndex].Fullness = fullness;
-                            context.SaveChanges();
-                        }
-                        return;
-                    }
+                    break;
+                case MenuItems.Document:
+                    break;
+                case MenuItems.Subscriber:
+
+                    break;
             }
+
+
 
         }
 
@@ -170,21 +207,25 @@ namespace ARMArchiveApp
         private void DocumentsToolStripMenuItemClick(object sender, EventArgs e)
         {
             menuItem = MenuItems.Document;
+            UpdateButtonClick(null, null);
         }
 
         private void ArchiveToolStripMenuItemClick(object sender, EventArgs e)
         {
             menuItem = MenuItems.Archive;
+            UpdateButtonClick(null, null);
         }
 
         private void DeliveryToolStripMenuItemClick(object sender, EventArgs e)
         {
             menuItem = MenuItems.Delivery;
+            UpdateButtonClick(null, null);
         }
 
         private void SubscriberToolStripMenuItemClick(object sender, EventArgs e)
         {
             menuItem = MenuItems.Subscriber;
+            UpdateButtonClick(null, null);
         }
 
         private void AboutMeToolStripMenuItemClick(object sender, EventArgs e)

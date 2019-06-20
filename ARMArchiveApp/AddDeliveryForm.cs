@@ -13,7 +13,7 @@ namespace ARMArchiveApp
 {
     public partial class AddDeliveryForm : Form
     {
-        private List<Subscriber> _subscribers;
+        private List<Subscriber> _subscribers = new List<Subscriber>();
         public AddDeliveryForm()
         {
             InitializeComponent();
@@ -35,7 +35,8 @@ namespace ARMArchiveApp
 
                 if (subscribersComboBox.SelectedItem != null)
                 {
-                    delivery.Subscriber = _subscribers[subscribersComboBox.SelectedIndex];
+                    var result = _subscribers.Where(subscriber => subscriber.FullName == subscribersComboBox.Text).ToList();
+                    delivery.Subscriber = result[0];
                     delivery.GettingDate = DateTime.Parse(gettingDateTimePicker.Text);
 
                     using (var context = new ArchiveContext())
