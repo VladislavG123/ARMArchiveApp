@@ -35,7 +35,7 @@ namespace ARMArchiveApp
                     new AddArchiveForm().Show();
                     break;
                 case MenuItems.Delivery:
-                    //    new AddDeliveryForm().Show();
+                    new AddDeliveryForm().Show();
                     break;
                 case MenuItems.Document:
                     new AddDocumentForm().Show();
@@ -185,6 +185,11 @@ namespace ARMArchiveApp
         private void SubscriberToolStripMenuItemClick(object sender, EventArgs e)
         {
             menuItem = MenuItems.Subscriber;
+        }
+
+        private void AboutMeToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            new AboutMeForm().Show();
         }
     }
 }

@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutMeForm.Designer.cs">
+      <DependentUpon>AboutMeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddArchiveForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddArchiveForm.Designer.cs">
       <DependentUpon>AddArchiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDeliveryForm.Designer.cs">
+      <DependentUpon>AddDeliveryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddDocumentForm.cs">
       <SubType>Form</SubType>
@@ -93,8 +105,14 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutMeForm.resx">
+      <DependentUpon>AboutMeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddArchiveForm.resx">
       <DependentUpon>AddArchiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDeliveryForm.resx">
+      <DependentUpon>AddDeliveryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDocumentForm.resx">
       <DependentUpon>AddDocumentForm.cs</DependentUpon>

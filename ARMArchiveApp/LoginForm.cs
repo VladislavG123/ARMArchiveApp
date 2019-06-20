@@ -20,6 +20,10 @@ namespace ARMArchiveApp
             InitializeComponent();
             login = "admin";
             password = "123";
+
+            passwordTextBox.Text = "";
+            passwordTextBox.PasswordChar = '*';
+
         }
 
         private void ButtonClick(object sender, EventArgs e)
