@@ -171,9 +171,106 @@ namespace ARMArchiveApp
                     }
                     break;
                 case MenuItems.Document:
+                    switch (dataGridView.CurrentCell.ColumnIndex)
+                    {
+                        case 0:
+                            MessageBox.Show("Значение ID изменять нельзя!");
+                            UpdateButtonClick(null, null);
+                            return;
+                        case 1:
+                            using (var context = new ArchiveContext())
+                            {
+                                // Number
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int number)
+                                    && number > 0 && number != (context.Documents.ToList())[dataGridView.CurrentCell.RowIndex].Number)
+                                {
+                                    context.Documents.ToList()[dataGridView.CurrentCell.RowIndex].Number = number;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 2:
+                            // Name
+                            using (var context = new ArchiveContext())
+                            {
+                                context.Documents.ToList()[dataGridView.CurrentCell.RowIndex].Name = dataGridView.CurrentCell.Value.ToString();
+                                context.SaveChanges();
+                            }
+                            return;
+                        case 3:
+                            using (var context = new ArchiveContext())
+                            {
+                                // Cell
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int cell)
+                                    && cell > 0 && cell != (context.Documents.ToList())[dataGridView.CurrentCell.RowIndex].Cell)
+                                {
+                                    context.Documents.ToList()[dataGridView.CurrentCell.RowIndex].Cell = cell;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 4:
+                            using (var context = new ArchiveContext())
+                            {
+                                // Amount
+                                if (int.TryParse(dataGridView.CurrentCell.Value.ToString(), out int amount)
+                                    && amount > 0 && amount != (context.Documents.ToList())[dataGridView.CurrentCell.RowIndex].Amount)
+                                {
+                                    context.Documents.ToList()[dataGridView.CurrentCell.RowIndex].Amount = amount;
+                                    context.SaveChanges();
+                                }
+                                return;
+                            }
+                        case 5:
+                            using (var context = new ArchiveContext())
+                            {
+                                MessageBox.Show("Значение даты изменять нельзя!");
+                                UpdateButtonClick(null, null);
+                                return;
+                            }
+
+                    }
                     break;
                 case MenuItems.Subscriber:
+                    switch (dataGridView.CurrentCell.ColumnIndex)
+                    {
+                        case 0:
+                            MessageBox.Show("Значение ID изменять нельзя!");
+                            UpdateButtonClick(null, null);
+                            return;
+                        case 1:
+                            // FullName
+                            using (var context = new ArchiveContext())
+                            {
+                                context.Subscribers.ToList()[dataGridView.CurrentCell.RowIndex].FullName = dataGridView.CurrentCell.Value.ToString();
+                                context.SaveChanges();
+                            }
+                            return;
+                        case 2:
+                            // Department
+                            using (var context = new ArchiveContext())
+                            {
+                                context.Subscribers.ToList()[dataGridView.CurrentCell.RowIndex].Department = dataGridView.CurrentCell.Value.ToString();
+                                context.SaveChanges();
+                            }
+                            return;
+                        case 3:
+                            // Phone
+                            using (var context = new ArchiveContext())
+                            {
+                                context.Subscribers.ToList()[dataGridView.CurrentCell.RowIndex].Phone = dataGridView.CurrentCell.Value.ToString();
+                                context.SaveChanges();
+                            }
+                            return;
+                        case 4:
+                            using (var context = new ArchiveContext())
+                            {
+                                MessageBox.Show("Значение даты изменять нельзя!");
+                                UpdateButtonClick(null, null);
+                                return;
+                            }
 
+                    }
                     break;
             }
 
