@@ -28,20 +28,20 @@ namespace ARMArchiveApp
 
         private void AddButtonClick(object sender, EventArgs e)
         {
-          
+
             switch (menuItem)
             {
                 case MenuItems.Archive:
                     new AddArchiveForm().Show();
                     break;
                 case MenuItems.Delivery:
-                //    new AddDeliveryForm().Show();
+                    //    new AddDeliveryForm().Show();
                     break;
                 case MenuItems.Document:
-                  //  new AddDocumentForm().Show();
+                    new AddDocumentForm().Show();
                     break;
                 case MenuItems.Subscriber:
-                  //  new AddSubscriberForm().Show();
+                    new AddSubscriberForm().Show();
                     break;
             }
         }
@@ -72,7 +72,7 @@ namespace ARMArchiveApp
                             dataGridView.DataSource = data as List<Subscriber>;
                             break;
                     }
-                    
+
 
                 }
             }
