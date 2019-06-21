@@ -114,6 +114,10 @@
     <Compile Include="Migrations\201906201747216_FixSubscriber.Designer.cs">
       <DependentUpon>201906201747216_FixSubscriber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906211732107_FixUpdateDB.cs" />
+    <Compile Include="Migrations\201906211732107_FixUpdateDB.Designer.cs">
+      <DependentUpon>201906211732107_FixUpdateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906201747216_FixSubscriber.resx">
       <DependentUpon>201906201747216_FixSubscriber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211732107_FixUpdateDB.resx">
+      <DependentUpon>201906211732107_FixUpdateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
