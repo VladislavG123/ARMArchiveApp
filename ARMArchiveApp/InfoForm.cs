@@ -94,7 +94,10 @@ namespace ARMArchiveApp
                             dataGridView.Columns.Add("resDateColumn", "Дата поступления");
                             foreach (var document in data as List<Document>)
                             {
-                                dataGridView.Rows.Add(new object[] { document.Number, document.Name, document.Theme, document.Cell, document.Amount, document.ReceiptDate.ToString("dd.MM.yyyy") });
+                                if (document.Amount > 0)
+                                {
+                                    dataGridView.Rows.Add(new object[] { document.Number, document.Name, document.Theme, document.Cell, document.Amount, document.ReceiptDate.ToString("dd.MM.yyyy") });
+                                }
                             }
 
                             break;
@@ -393,7 +396,7 @@ namespace ARMArchiveApp
                 {
                     foreach (var document in context.Documents.ToList())
                     {
-                        if (document.Name == documentName)
+                        if (document.Name == documentName && document.Amount > 0)
                         {
                             MessageBox.Show($"Документ найден. Он находится в ячейке номер {document.Cell}");
                             return;

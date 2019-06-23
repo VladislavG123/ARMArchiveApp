@@ -27,8 +27,11 @@ namespace ARMArchiveApp
                 }
                 foreach (var document in context.Documents.ToList())
                 {
-                    _documents.Add(document);
-                    documentComboBox.Items.Add(document.Name);
+                    if (document.Amount > 0)
+                    {
+                        _documents.Add(document);
+                        documentComboBox.Items.Add(document.Name);
+                    }
                 }
             }
         }
@@ -72,15 +75,12 @@ namespace ARMArchiveApp
                             }
                             index++;
                         }
+
                         context.Documents.ToList()[index].Amount--;
 
                         context.Archives.Where(arch => arch.Cell == delivery.Document.Cell).ToList()[0].Fullness = context.Documents.ToList()[index].Amount;
 
-                        // Если количество меньше или ровно 0, объект удаляется
-                        if (context.Documents.ToList()[index].Amount <= 0)
-                        {
-                            context.Documents.Remove(context.Documents.ToList()[index]);
-                        }
+
                         context.Deliveries.Add(delivery);
                         context.SaveChanges();
                         Close();
