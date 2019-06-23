@@ -18,7 +18,7 @@ namespace ARMArchiveApp.Models
         /// Название документа
         /// </summary>
         public string Name { get; set; }
-        public List<string> Themes { get; set; } = new List<string>();
+        public string Theme { get; set; }
         /// <summary>
         /// Ячейка
         /// </summary>
@@ -30,5 +30,6 @@ namespace ARMArchiveApp.Models
         /// </summary>
         public DateTime ReceiptDate { get; set; }
 
+        public virtual ICollection<Delivery> Deliveries { get; set; } = new List<Delivery>();
     }
 }

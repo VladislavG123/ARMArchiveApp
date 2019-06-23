@@ -16,7 +16,7 @@ namespace ARMArchiveApp.Models
         public string Department { get; set; }
 
         public string Phone { get; set; }
-        
 
+        public virtual ICollection<Delivery> Deliveries { get; set; } = new List<Delivery>();
     }
 }

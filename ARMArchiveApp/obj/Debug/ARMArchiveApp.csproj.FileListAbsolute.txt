@@ -172,3 +172,4 @@ C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.exe
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.pdb
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixUpdateDB.resources
+C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixNavigationPropeties.resources

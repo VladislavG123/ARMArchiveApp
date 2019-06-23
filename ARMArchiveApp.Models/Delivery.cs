@@ -11,12 +11,12 @@ namespace ARMArchiveApp.Models
         public Guid Id { get; set; } = Guid.NewGuid();
 
         // Документ
-        public Document Document { get; set; }
+        public virtual Document Document { get; set; }
 
         // Дата выдачи
         public DateTime GettingDate { get; set; }
 
         // Кому выдан
-        public Subscriber Subscriber { get; set; }
+        public virtual Subscriber Subscriber { get; set; }
     }
 }

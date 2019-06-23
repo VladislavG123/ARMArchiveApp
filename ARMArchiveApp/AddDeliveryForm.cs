@@ -62,7 +62,7 @@ namespace ARMArchiveApp
                     using (var context = new ArchiveContext())
                     {
                         // Вычитание из количества документов 
-                        int index = -1;
+                      /*  int index = -1;
                         foreach (var document in _documents)
                         {
                             if (document.Name == documentComboBox.Name)
@@ -77,13 +77,13 @@ namespace ARMArchiveApp
                         if (context.Documents.ToList()[index].Amount <= 0)
                         {
                             context.Documents.Remove(context.Documents.ToList()[index]);
-                        }
+                        }*/
                         context.Deliveries.Add(delivery);
                         context.SaveChanges();
+                        Close();
+                        return;
                     }
-
-                    Close();
-                    return;
+                    
                 }
                 throw new Exception("Данные введены неверно!");
             }

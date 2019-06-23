@@ -25,6 +25,7 @@ namespace ARMArchiveApp
                 Document document = new Document();
                 if (int.TryParse(numberTextBox.Text, out int number) && number > 0
                     && nameTextBox.Text.Length > 0
+                    && themeTextBox.Text.Length > 0
                     && int.TryParse(cellTextBox.Text, out int cell) && cell > 0
                     && int.TryParse(amountTextBox.Text, out int amount) && amount > 0
                     && DateTime.TryParse(receiptDatePicker.Text, out DateTime receiptDate))
@@ -49,18 +50,10 @@ namespace ARMArchiveApp
                                 return;
                             }
                         }
-
-
-                        for (int i = 0; i < themesDataGridView.Columns.Count; i++)
-                        {
-                            if (themesDataGridView.Columns[i].HeaderText.Length > 0)
-                            {
-                                document.Themes.Add(themesDataGridView.Rows[i].Cells[0].Value as string);
-                            }
-                        }
-
+                        
                         document.Number = number;
                         document.Name = nameTextBox.Text;
+                        document.Theme = themeTextBox.Text;
                         document.Cell = cell;
                         document.Amount = amount;
                         document.ReceiptDate = receiptDate;

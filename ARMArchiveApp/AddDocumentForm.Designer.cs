@@ -40,9 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.receiptDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.themesDataGridView = new System.Windows.Forms.DataGridView();
-            this.themeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.themesDataGridView)).BeginInit();
+            this.themeTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cellTextBox
@@ -138,35 +136,27 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 191);
+            this.label7.Location = new System.Drawing.Point(9, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 13);
+            this.label7.Size = new System.Drawing.Size(133, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Введите темы документа";
+            this.label7.Text = "Введите темy документа";
             // 
-            // themesDataGridView
+            // themeTextBox
             // 
-            this.themesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.themesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.themeColumn});
-            this.themesDataGridView.Location = new System.Drawing.Point(12, 207);
-            this.themesDataGridView.Name = "themesDataGridView";
-            this.themesDataGridView.Size = new System.Drawing.Size(330, 95);
-            this.themesDataGridView.TabIndex = 13;
-            // 
-            // themeColumn
-            // 
-            this.themeColumn.HeaderText = "Темы";
-            this.themeColumn.Name = "themeColumn";
+            this.themeTextBox.Location = new System.Drawing.Point(12, 208);
+            this.themeTextBox.Name = "themeTextBox";
+            this.themeTextBox.Size = new System.Drawing.Size(127, 20);
+            this.themeTextBox.TabIndex = 11;
             // 
             // AddDocumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 304);
-            this.Controls.Add(this.themesDataGridView);
             this.Controls.Add(this.receiptDatePicker);
             this.Controls.Add(this.amountTextBox);
+            this.Controls.Add(this.themeTextBox);
             this.Controls.Add(this.cellTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label6);
@@ -179,7 +169,6 @@
             this.Controls.Add(this.label3);
             this.Name = "AddDocumentForm";
             this.Text = "AddDocumentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.themesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +188,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker receiptDatePicker;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView themesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn themeColumn;
+        private System.Windows.Forms.TextBox themeTextBox;
     }
 }

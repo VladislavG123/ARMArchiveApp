@@ -11,6 +11,7 @@
         public ArchiveContext()
             : base("name=ArchiveContext")
         {
+          //  Database.SetInitializer(new DropCreateDatabaseAlways<ArchiveContext>());
         }
         
         public DbSet<Archive> Archives { get; set; }
