@@ -57,7 +57,7 @@ namespace ARMArchiveApp
                                 MessageBox.Show("Данное имя файла уже занято!");
                                 return;
                             }
-                            if (item.Cell == cell)
+                            if (item.Cell == cell && item.Amount > 0)
                             {
                                 MessageBox.Show("Данная ячейка уже занята!");
                                 return;
