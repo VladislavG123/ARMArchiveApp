@@ -68,19 +68,13 @@ namespace ARMArchiveApp
                         {
                             if (document.Name == documentComboBox.Name)
                             {
-                                foreach (var archive in context.Archives)
-                                {
-                                    if (archive.Cell == document.Cell)
-                                    {
-                                        // TODO Вычитание заполености в архиве
-                                        context.Archives.Where(arch => arch.Cell == archive.Cell).ToList()[0].Fullness = document.Amount - 1;
-                                    }
-                                }
                                 break;
                             }
                             index++;
                         }
                         context.Documents.ToList()[index].Amount--;
+
+                        context.Archives.Where(arch => arch.Cell == delivery.Document.Cell).ToList()[0].Fullness = context.Documents.ToList()[index].Amount;
 
                         // Если количество меньше или ровно 0, объект удаляется
                         if (context.Documents.ToList()[index].Amount <= 0)
