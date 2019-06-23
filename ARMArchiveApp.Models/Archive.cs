@@ -20,7 +20,6 @@ namespace ARMArchiveApp.Models
         // Ячейка
         public int Cell { get; set; }
 
-        [Range(0, 100, ErrorMessage = "Неверные данные в Fullness. Свойство не может быть меньше нуля и больше ста!")]
         public int Fullness { get; set; }
     }
 }

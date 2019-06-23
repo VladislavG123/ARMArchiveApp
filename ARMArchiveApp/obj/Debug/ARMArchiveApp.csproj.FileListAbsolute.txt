@@ -173,3 +173,4 @@ C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.pdb
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixUpdateDB.resources
 C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.FixNavigationPropeties.resources
+C:\Users\Vlad\Source\Repos\ARMArchiveApp4\ARMArchiveApp\obj\Debug\ARMArchiveApp.Migrations.DeleteRange.resources

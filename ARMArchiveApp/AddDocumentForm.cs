@@ -32,6 +32,19 @@ namespace ARMArchiveApp
                 {
                     using (var context = new ArchiveContext())
                     {
+                        bool isCellCreated = false;
+                        foreach (var archive in context.Archives)
+                        {
+                            if (archive.Cell == cell)
+                            {
+                                isCellCreated = true;
+                            }
+                        }
+                        if (!isCellCreated)
+                        {
+                            MessageBox.Show("Данной ячейки не существует!");
+                            return;
+                        }
                         foreach (var item in context.Documents.ToList())
                         {
                             if (item.Number == number)
@@ -49,12 +62,14 @@ namespace ARMArchiveApp
                                 MessageBox.Show("Данная ячейка уже занята!");
                                 return;
                             }
+                            
                         }
                         
                         document.Number = number;
                         document.Name = nameTextBox.Text;
                         document.Theme = themeTextBox.Text;
                         document.Cell = cell;
+                        context.Archives.Where(archive => archive.Cell == cell).ToList()[0].Fullness = amount;
                         document.Amount = amount;
                         document.ReceiptDate = receiptDate;
 

@@ -39,34 +39,43 @@ namespace ARMArchiveApp
             {
                 Delivery delivery = new Delivery();
 
-                if (subscribersComboBox.SelectedItem != null)
+                using (var context = new ArchiveContext())
                 {
-                    foreach (var subscriber in _subscribers)
+                    if (subscribersComboBox.SelectedItem != null)
                     {
-                        if (subscriber.FullName == subscribersComboBox.Text)
+                        foreach (var subscriber in _subscribers)
                         {
-                            delivery.Subscriber = subscriber;
+                            if (subscriber.FullName == subscribersComboBox.Text)
+                            {
+                                delivery.Subscriber = context.Subscribers.Where(subs => subs.FullName == subscriber.FullName).ToList()[0];
+                            }
                         }
-                    }
 
-                    foreach (var document in _documents)
-                    {
-                        if (document.Name == documentComboBox.Text)
+                        foreach (var document in _documents)
                         {
-                            delivery.Document = document;
+                            if (document.Name == documentComboBox.Text)
+                            {
+                                delivery.Document = context.Documents.Where(doc => doc.Name == document.Name).ToList()[0];
+                            }
                         }
-                    }
 
-                    delivery.GettingDate = DateTime.Parse(gettingDateTimePicker.Text);
+                        delivery.GettingDate = DateTime.Parse(gettingDateTimePicker.Text);
 
-                    using (var context = new ArchiveContext())
-                    {
+
                         // Вычитание из количества документов 
-                      /*  int index = -1;
+                        int index = -1;
                         foreach (var document in _documents)
                         {
                             if (document.Name == documentComboBox.Name)
                             {
+                                foreach (var archive in context.Archives)
+                                {
+                                    if (archive.Cell == document.Cell)
+                                    {
+                                        // TODO Вычитание заполености в архиве
+                                        context.Archives.Where(arch => arch.Cell == archive.Cell).ToList()[0].Fullness = document.Amount - 1;
+                                    }
+                                }
                                 break;
                             }
                             index++;
@@ -77,13 +86,13 @@ namespace ARMArchiveApp
                         if (context.Documents.ToList()[index].Amount <= 0)
                         {
                             context.Documents.Remove(context.Documents.ToList()[index]);
-                        }*/
+                        }
                         context.Deliveries.Add(delivery);
                         context.SaveChanges();
                         Close();
                         return;
                     }
-                    
+
                 }
                 throw new Exception("Данные введены неверно!");
             }
