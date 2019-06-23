@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.архивToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.документыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.актОформленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findEmptyCellButton = new System.Windows.Forms.Button();
+            this.findCellButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.documentNameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +90,13 @@
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.SubscriberToolStripMenuItemClick);
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.AboutMeToolStripMenuItemClick);
+            // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -123,18 +136,56 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
             // 
-            // справкаToolStripMenuItem
+            // findEmptyCellButton
             // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.AboutMeToolStripMenuItemClick);
+            this.findEmptyCellButton.Location = new System.Drawing.Point(12, 438);
+            this.findEmptyCellButton.Name = "findEmptyCellButton";
+            this.findEmptyCellButton.Size = new System.Drawing.Size(127, 23);
+            this.findEmptyCellButton.TabIndex = 5;
+            this.findEmptyCellButton.Text = "Найти пустые ячейки ";
+            this.findEmptyCellButton.UseVisualStyleBackColor = true;
+            this.findEmptyCellButton.Click += new System.EventHandler(this.FindEmptyCellButtonClick);
+            // 
+            // findCellButton
+            // 
+            this.findCellButton.Location = new System.Drawing.Point(669, 438);
+            this.findCellButton.Name = "findCellButton";
+            this.findCellButton.Size = new System.Drawing.Size(119, 23);
+            this.findCellButton.TabIndex = 6;
+            this.findCellButton.Text = "Найти ячейку";
+            this.findCellButton.UseVisualStyleBackColor = true;
+            this.findCellButton.Click += new System.EventHandler(this.FindCellButtonClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // documentNameTextBox
+            // 
+            this.documentNameTextBox.Location = new System.Drawing.Point(533, 440);
+            this.documentNameTextBox.Name = "documentNameTextBox";
+            this.documentNameTextBox.Size = new System.Drawing.Size(130, 20);
+            this.documentNameTextBox.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(530, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Введите название документа";
             // 
             // InfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.documentNameTextBox);
+            this.Controls.Add(this.findCellButton);
+            this.Controls.Add(this.findEmptyCellButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.addButton);
@@ -164,6 +215,11 @@
         private System.Windows.Forms.ToolStripMenuItem актОформленияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.Button findEmptyCellButton;
+        private System.Windows.Forms.Button findCellButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox documentNameTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

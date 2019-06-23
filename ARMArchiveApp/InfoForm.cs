@@ -305,7 +305,7 @@ namespace ARMArchiveApp
             {
                 MessageBox.Show("Возникла ошибка.");
             }
-          
+
             UpdateButtonClick(null, null);
 
         }
@@ -361,6 +361,51 @@ namespace ARMArchiveApp
         private void AboutMeToolStripMenuItemClick(object sender, EventArgs e)
         {
             new AboutMeForm().Show();
+        }
+
+        private void FindEmptyCellButtonClick(object sender, EventArgs e)
+        {
+            string result = "Пустые ячейки:\r";
+            List<int> cells = new List<int>();
+            using (var context = new ArchiveContext())
+            {
+                foreach (var archive in context.Archives.ToList())
+                {
+                    if (archive.Fullness == 0)
+                    {
+                        cells.Add(archive.Cell);
+                    }
+                }
+            }
+            foreach (var cell in cells)
+            {
+                result += cell + "\r";
+            }
+            MessageBox.Show(result);
+        }
+
+        private void FindCellButtonClick(object sender, EventArgs e)
+        {
+            try
+            {
+                string documentName = documentNameTextBox.Text;
+                using (var context = new ArchiveContext())
+                {
+                    foreach (var document in context.Documents.ToList())
+                    {
+                        if (document.Name == documentName)
+                        {
+                            MessageBox.Show($"Документ найден. Он находится в ячейке номер {document.Cell}");
+                            return;
+                        }
+                    }
+                    MessageBox.Show("Документ не найден.");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ошибка.\r\r" + exception.Message);
+            }
         }
     }
 }
